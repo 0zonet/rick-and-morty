@@ -1,0 +1,17 @@
+<div class="detail__container">
+
+    <ng-container *ngIf="vm$ | async as vm; else loading">
+
+        <div class="detail__header">
+            <button *ngIf="(vm.characters | selected).length > 0" mat-stroked-button color="primary" (click)="reset()">Reset</button>
+        </div>  
+         
+        <div *ngIf="(vm.characters | selected).length === 0" class="detail__empty__message">No hay elementos seleccionados</div>
+         <app-detail *ngFor="let character of vm.characters | selected" [character]="character"></app-detail>
+
+    </ng-container>
+
+    <ng-template #loading>
+        <mat-spinner></mat-spinner>
+    </ng-template>
+</div>

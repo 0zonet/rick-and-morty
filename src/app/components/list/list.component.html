@@ -1,0 +1,15 @@
+<mat-card *ngFor="let character of characters" class="list__card" [class.active]="character.selected" (click)="onCardClick(character);">
+    <mat-card-header>
+      <img mat-card-sm-image [src]="character.image" >
+      <mat-card-title-group class="list__card__title">
+        <mat-card-title>{{character.name}}</mat-card-title>
+         <!--mat-card-subtitle>Small</mat-card-subtitle-->
+        <div class="list__card__info">
+          <span>ID: {{character.id}} </span>
+          <span>Status: {{character.status}} </span>
+          <span>Species: {{character.species}} </span>
+        </div>
+      </mat-card-title-group>
+    </mat-card-header>
+    <mat-card-content></mat-card-content>
+</mat-card>

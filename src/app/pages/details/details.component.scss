@@ -1,0 +1,26 @@
+.detail__container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+}
+
+.detail__empty__message{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #737373;
+}
+
+@media (max-width:801px){
+    .detail__container{
+        flex-direction: column;
+        width: 100%;
+        max-height: calc(100vh - 5rem);
+        position: relative;
+        top: 5rem;
+        overflow: scroll;
+        justify-content: flex-start;
+    }
+}

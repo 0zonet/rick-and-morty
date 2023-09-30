@@ -1,0 +1,6 @@
+<div *ngIf="character" class="detail__card" [ngStyle]="{'background-image': 'url(' + character.image + ')'}">
+    <div class="detail__card__info">
+        <span class="title"> {{character.name}} </span>
+        <span class="sub-title">From: {{character.origin.name}} </span>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<header>
+    <div class="search">
+        <mat-form-field appearance="outline">
+            <mat-icon matSuffix>search</mat-icon>
+            <mat-label>Buscar por nombre, abc</mat-label>
+            <input matInput placeholder="Buscar">
+        </mat-form-field>
+    </div>
+</header>
+
+
+<div class="list__header">
+    <button *ngIf="showDetailsBtn" mat-stroked-button color="primary" (click)="viewDetails()">View Details</button>
+
+    <span class="sort-by">Sort By: <span>name</span></span>
+</div>
+
+<section class="list__container">
+    
+    <ng-container *ngIf="vm$ | async as vm">
+        <app-list *ngIf="vm.characters.length > 0;else loading" [characters]="vm.characters" (onSelect)="onCardClick($event)"></app-list>
+        
+        <ng-template #loading>
+            <mat-spinner></mat-spinner>
+        </ng-template>
+
+    </ng-container>
+    
+  
+</section>
